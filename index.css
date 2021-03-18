@@ -1,5 +1,6 @@
 .page{
     background-color: black;
+    margin: 0;
 }
 .header{
     max-width: 880px;
@@ -15,6 +16,11 @@
 .header__logo{
 max-width: 142px;
 max-height: 33px;
+}
+@media screen and (max-width: 1279px) {
+    .header__logo{
+        padding-left: 27px;
+    }
 }
 .header__line{
     max-width: 880px;
@@ -40,6 +46,7 @@ max-height: 33px;
     max-width: 169px;
     max-height: 128px;
     margin-right: 30px;
+    object-fit: cover;
 }
 .profile__title{
     color: white;
@@ -85,6 +92,7 @@ max-height: 33px;
         grid-template-columns: repeat(1, 1fr);
         padding-left: 19px;
         padding-right: 19px;
+        box-sizing: border-box;
     }
 }
 .elements__img{
