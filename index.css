@@ -1,0 +1,123 @@
+.page{
+    background-color: black;
+}
+.header{
+    max-width: 880px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 45px;
+}
+@media screen and (max-width: 1279px) {
+    .header{
+        max-width: 320px;
+    }
+}
+.header__logo{
+max-width: 142px;
+max-height: 33px;
+}
+.header__line{
+    max-width: 880px;
+    max-height: 0;
+    opacity: 0.7;
+    border: 1px solid #545454;
+    margin: 40px auto;
+}
+.profile{
+    display: flex;
+    max-width: 880px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+}
+@media screen and (max-width: 1279px) {
+    .profile{
+        max-width: 282px;
+    }
+}
+.profile__photo{
+    border-radius: 50%;
+    max-width: 169px;
+    max-height: 128px;
+    margin-right: 30px;
+}
+.profile__title{
+    color: white;
+    margin-bottom: 16px;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 48px;
+    margin-top: 22px;
+}
+.profile__subtitle{
+    color:white;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21.78px;
+    margin-bottom: 25px;
+}
+.profile__info{
+    max-width: 336px;
+    max-height: 73px;
+}
+.profile__rectangle{
+    width: 150px;
+    height: 50px;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+.profile__review{
+    display: flex;
+}
+.elements{
+    display: grid;
+    grid-template-columns: repeat(3, 282px);
+    gap: 18px;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    max-width: 880px;
+}
+@media screen and (max-width: 1279px) {
+    .elements{
+        grid-template-columns: repeat(1, 1fr);
+        padding-left: 19px;
+        padding-right: 19px;
+    }
+}
+.elements__img{
+    max-width: 100%;
+}
+.elements__item{
+    background-color: white;
+    border-radius: 10px;
+}
+.elements__title{
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    margin-left: 20px;
+}
+.footer__text{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #545454;
+    max-width: 880px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 67px;
+    margin-bottom: 60px;
+}
+@media screen and (max-width: 1279px) {
+    .footer__text{
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 282px;
+    }
+}
+.elements__like{
+   line-height: 19px;
+}
