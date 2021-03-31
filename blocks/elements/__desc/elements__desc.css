@@ -1,0 +1,10 @@
+.elements__desc{
+    display: flex;
+    max-width: 246px;
+    max-height: 23px;
+    justify-content: space-between;
+    margin-bottom: 31px;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
