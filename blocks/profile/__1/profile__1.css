@@ -1,4 +1,4 @@
 .profile__1{
     display: flex;
-    max-width: 336px;
+    min-width: 336px;
 }
