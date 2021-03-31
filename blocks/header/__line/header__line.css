@@ -5,3 +5,10 @@
     border: 1px solid #545454;
     margin: 40px auto;
 }
+@media screen and (max-width: 767px) {
+    .header__line{
+        width: 317px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
