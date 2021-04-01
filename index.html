@@ -10,6 +10,27 @@
 </head>
 
 <body class='page'>
+    <div class="popup">
+        <div class="popup__overlay"></div>
+        <div class="popup__container">
+            <h2 class='popup__container_title'>Редактировать профиль</h2>
+            <form class='form'>
+                <fieldset class='form__info'>
+                    <input type='text' class='form__info_name'>
+                </fieldset>
+                    <div class="form__info_line"></div>
+                    <fieldset class='form__info'>
+                    <input type='text' class='form__info_descr'>
+                </fieldset>
+                    <div class="form__info_line"></div>
+                </fieldset>
+            </form>
+            <div class="popup__close-button">
+                +
+            </div>
+
+        </div>
+    </div>
     <header class='header'>
         <img src='./images/logo.svg' class='header__logo' alt='Логотип'>
         <div class="header__line"></div>
@@ -20,7 +41,7 @@
             <div class='profile__info'>
                 <div class='profile__1'>
                     <h1 class='profile__title'>Жак-Ив Кусто</h1>
-                    <img src='./images/Edit Button.svg' class='profile__ch' alt='Изменить'>
+                    <img src='./images/Edit Button.svg' class='profile__ch' alt='Изменить' id='open_popup_btn'>
                 </div>
                 <p class='profile__subtitle'>Исследователь океана</p>
             </div>
@@ -80,6 +101,7 @@
     <footer class='footer'>
         <p class='footer__text'>&copy; 2021 Mesto Russia</p>
     </footer>
+    <script src='./scripts/index.js'></script>
 </body>
 
 </html>

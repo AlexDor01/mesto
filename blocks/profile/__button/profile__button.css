@@ -1,6 +1,7 @@
 .profile__button{
     height: 50px;
     margin-top: 20px;
+    cursor: pointer;
 }
 @media screen and (max-width: 767px) {
     .profile__button{
