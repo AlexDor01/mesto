@@ -12,5 +12,5 @@
     transition: 0.3s;
  }
  .elements__like:active {
-    background-image: url(/images/Union.png);
+    background-image: url(../../../images/Union.png);
  }
