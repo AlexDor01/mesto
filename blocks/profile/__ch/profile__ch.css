@@ -6,3 +6,6 @@
     margin-top: 20px;
     cursor: pointer;
 }
+.profile__ch:hover{
+    opacity: .8;
+}

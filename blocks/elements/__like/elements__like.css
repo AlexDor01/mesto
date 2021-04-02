@@ -1,4 +1,16 @@
 .elements__like{
     width: 22px;
     height: 19px;
+    cursor: pointer;
+    background-image: url(/images/Vector.png);
+    border: none;
+    background-color: transparent;
+    outline: none;
+ }
+ .elements__like:hover {
+    opacity: 0.6;
+    transition: 0.3s;
+ }
+ .elements__like:active {
+    background-image: url(/images/Union.png);
  }

@@ -1,9 +1,13 @@
 .elements__img{
-    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 10px 10px 0px 0px;
 }
 @media screen and (max-width: 1023px) {
     .elements__img{
-    min-width: 339px;
+        min-width: 339px;
     }
 }
 @media screen and (max-width: 767px) {

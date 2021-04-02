@@ -16,17 +16,15 @@
 @media screen and (max-width: 1023px) {
     .elements{
         max-width: 740px;
-    grid-template-columns: repeat(2, 1fr);
-    margin-left: 30px;
-    margin-right: 30px;
-    gap: 30px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
     }
 }
 @media screen and (max-width: 767px) {
     .elements{
         max-width: 282px;
-    grid-template-columns: repeat(1, 1fr);
-    margin-left: auto;
-    margin-right: auto;
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: auto;
+        margin-right: auto;
     }
 }
