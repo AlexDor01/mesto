@@ -1,4 +1,4 @@
-.form__info-btn{
+.form__btn{
     font-weight: normal;
     font-size: 18px;
     line-height: 22px;
@@ -12,6 +12,6 @@
     margin-top: 48px;
     cursor: pointer;
 }
-.form__info_btn:hover {
+.form__btn:hover {
     opacity: 0.8;
 }

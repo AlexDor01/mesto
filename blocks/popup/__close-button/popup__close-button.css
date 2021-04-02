@@ -7,13 +7,16 @@
     right: -30px;
     transform: rotate(-45deg);
     cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
 }
 @media screen and (max-width: 767px){
-.popup__close-button {
-    top: -45px;
-    right: 0px;
-    width: 26px;
-    height: 26px;
+    .popup__close-button {
+        top: -45px;
+        right: 0px;
+        width: 26px;
+        height: 26px;
 }
 }
 .popup__close-button:hover{

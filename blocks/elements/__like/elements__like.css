@@ -2,7 +2,7 @@
     width: 22px;
     height: 19px;
     cursor: pointer;
-    background-image: url(../../../images/Vector.png);
+    background-image: url(../../../images/Vector1.svg);
     border: none;
     background-color: transparent;
     outline: none;
@@ -12,5 +12,5 @@
     transition: 0.3s;
  }
  .elements__like:active {
-    background-image: url(../../../images/Union.png);
+    background-image: url(../../../images/Union1.svg);
  }

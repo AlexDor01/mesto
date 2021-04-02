@@ -5,6 +5,9 @@
     align-self: center;
     margin-top: 20px;
     cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
 }
 .profile__ch:hover{
     opacity: .8;

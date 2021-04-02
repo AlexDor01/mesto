@@ -1,52 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='ru'>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Document</title>
-    <link rel="stylesheet" href="./pages/index.css">
+    <link rel='stylesheet' href='./pages/index.css'>
 </head>
-
 <body class='page'>
-    <div class="popup">
-        <div class="popup__overlay"></div>
-        <div class="popup__container">
+    <div class='popup'>
+        <div class='popup__overlay'></div>
+        <div class='popup__container'>
             <h2 class='popup__title'>Редактировать профиль</h2>
             <form class='form'>
                 <fieldset class='form__info'>
-                    <input type='text' class='form__info-name' name="inputInfoname">
-                    <input type='text' class='form__info-descr' name="inputInfoDescr">
-                    <button type='submit' class='form__info-btn'>Сохранить</button>
+                    <input type='text' class='form__name' name='inputInfoname'>
+                    <input type='text' class='form__descr' name='inputInfoDescr'>
+                    <button type='submit' class='form__btn'>Сохранить</button>
                 </fieldset>
             </form>
-            <div class="popup__close-button">
+            <button class='popup__close-button'>
                 +
-            </div>
-
+            </button>
         </div>
     </div>
     <header class='header'>
         <img src='./images/logo.svg' class='header__logo' alt='Логотип'>
-        <div class="header__line"></div>
     </header>
     <div class='profile'>
-        <div class="profile__review">
+        <div class='profile__review'>
             <img src='./images/zhak.jpg' class='profile__photo' alt='Жак-Ив Кусто'>
             <div class='profile__info'>
                 <div class='profile__block'>
                     <h1 class='profile__title'>Жак-Ив Кусто</h1>
-                    <img src='./images/Edit Button.svg' class='profile__ch' alt='Изменить' id='open_popup_btn'>
+                    <button class='profile__ch' id='open_popup_btn'><img src='./images/Edit Button.svg' alt='Изменить'></button>
                 </div>
                 <p class='profile__subtitle'>Исследователь океана</p>
             </div>
         </div>
-        <img src='./images/Add Button.png' class='profile__button' alt='Добавить'>
+        <button class='profile__button'><img src='./images/Add Button1.svg' alt='Добавить'></button>
     </div>
     <div class='elements'>
         <article class='elements__item'>
-
             <img src='./images/Dombai.jpg' class='elements__img' alt='Домбай'>
             <div class='elements__desc'>
                 <h2 class='elements__title'>Домбай</h2>
@@ -54,7 +50,6 @@
             </div>
         </article>
         <article class='elements__item'>
-
             <img src='./images/Elbrus.jpg' class='elements__img' alt='Эльбрус'>
             <div class='elements__desc'>
                 <h2 class='elements__title'>Гора Эльбрус</h2>
@@ -62,7 +57,6 @@
             </div>
         </article>
         <article class='elements__item'>
-
             <img src='./images/karach.jpg' class='elements__img' alt='Карачаевск'>
             <div class='elements__desc'>
                 <h2 class='elements__title'>Карачаевск</h2>
@@ -70,7 +64,6 @@
             </div>
         </article>
         <article class='elements__item'>
-
             <img src='./images/Dombai.jpg' class='elements__img' alt='Домбай'>
             <div class='elements__desc'>
                 <h2 class='elements__title'>Домбай</h2>
@@ -78,7 +71,6 @@
             </div>
         </article>
         <article class='elements__item'>
-
             <img src='./images/Elbrus.jpg' class='elements__img' alt='Эльбрус'>
             <div class='elements__desc'>
                 <h2 class='elements__title'>Гора Эльбрус</h2>
@@ -86,7 +78,6 @@
             </div>
         </article>
         <article class='elements__item'>
-
             <img src='./images/karach.jpg' class='elements__img' alt='Карачаевск'>
             <div class='elements__desc'>
                 <h2 class='elements__title'>Карачаевск</h2>
@@ -99,5 +90,4 @@
     </footer>
     <script src='./scripts/index.js'></script>
 </body>
-
 </html>
