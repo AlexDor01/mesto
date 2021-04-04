@@ -11,6 +11,7 @@
     border-radius: 2px;
     margin-top: 48px;
     cursor: pointer;
+    transition: opacity .3s ease-out;
 }
 .form__btn:hover {
     opacity: 0.8;

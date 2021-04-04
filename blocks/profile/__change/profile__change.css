@@ -1,4 +1,4 @@
-.profile__ch{
+.profile__change{
     width: 24px;
     height: 24px;
     margin-left: 18px;
@@ -8,7 +8,8 @@
     background-color: transparent;
     border: none;
     outline: none;
+    transition: opacity .3s ease-out;
 }
-.profile__ch:hover{
-    opacity: .8;
+.profile__change:hover{
+    opacity: .6;
 }

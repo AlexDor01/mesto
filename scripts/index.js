@@ -1,6 +1,7 @@
+  
 const popup = document.querySelector('.popup');
 const openPopupBtn = document.getElementById('open_popup_btn');
-const popupContainer = document.querySelector('.popup__container')
+const popupContainer = document.querySelector('.popup__container');
 const closePopupBtn = document.querySelector('.popup__close-button');
 const popupOverlay = document.querySelector('.popup__overlay');
 let popupNameInput = popupContainer.querySelector('.form__name');
@@ -35,4 +36,3 @@ function formSubmitHandler(evt) {
   }
   closePopupBtn.addEventListener('click', closePopup);
   popupContainer.addEventListener('submit', formSubmitHandler);
-
