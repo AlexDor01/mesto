@@ -9,6 +9,7 @@
     border: none;
     outline: none;
     transition: opacity .3s ease-out;
+    padding: 0;
 }
 .profile__change:hover{
     opacity: .6;
