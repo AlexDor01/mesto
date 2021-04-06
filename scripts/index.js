@@ -18,8 +18,8 @@ function openPopup() {
 function closePopup() {
   popup.classList.remove('popup_opened')
 }
-openPopupBtn.addEventListener('click', function () {
-  openPopup();
+openPopupBtn.addEventListener('click', function () { 
+  openPopup();  /* Объясните, пожалуйста, как исправить этот пункт. Вообще не понимаю, точнее задание понял, а как реализовать - нет */
 })
 function handleFormSubmit(evt) {
   evt.preventDefault();
