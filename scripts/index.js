@@ -15,10 +15,10 @@ function openPopup() {
   popupDescrInput.value = profileDescr.textContent; 
   popup.classList.add('popup_opened');
 }
-function closePopup() {   /* Если вдруг будет еще ошибка, хотя я вроде все исправил, дайте, пожалуйста, еще одну итерацию */
+function closePopup() {
   popup.classList.remove('popup_opened')
 }
-openPopupBtn.addEventListener('click', openPopup)
+openPopupBtn.addEventListener('click', openPopup);
 function handleFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = popupNameInput.value;
