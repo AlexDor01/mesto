@@ -16,3 +16,9 @@
 .form__btn:hover {
     opacity: 0.8;
 }
+@media screen and (max-width: 767px) {
+    .form__btn{
+        font-size: 14px;
+        line-height: 17px;
+    }
+}

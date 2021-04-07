@@ -1,4 +1,3 @@
-
 const popup = document.querySelector('.popup');
 const openPopupBtn = document.querySelector('.profile__change');
 const popupContainer = document.querySelector('.popup__container');
@@ -9,18 +8,17 @@ const profile = document.querySelector('.profile');
 const profileInfo = document.querySelector('.profile__info');
 const profileName = profileInfo.querySelector('.profile__title');
 const profileDescr = profileInfo.querySelector('.profile__subtitle');
+const formElement = document.querySelector('.form');
 
 function openPopup() {
   popupNameInput.value = profileName.textContent;
-  popupDescrInput.value = profileDescr.textContent;
+  popupDescrInput.value = profileDescr.textContent; 
   popup.classList.add('popup_opened');
 }
-function closePopup() {
+function closePopup() {   /* Если вдруг будет еще ошибка, хотя я вроде все исправил, дайте, пожалуйста, еще одну итерацию */
   popup.classList.remove('popup_opened')
 }
-openPopupBtn.addEventListener('click', function () { 
-  openPopup();  /* Объясните, пожалуйста, как исправить этот пункт. Вообще не понимаю, точнее задание понял, а как реализовать - нет */
-})
+openPopupBtn.addEventListener('click', openPopup)
 function handleFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = popupNameInput.value;
@@ -28,4 +26,4 @@ function handleFormSubmit(evt) {
   closePopup();
 }
 closePopupBtn.addEventListener('click', closePopup);
-popupContainer.addEventListener('submit', handleFormSubmit);
+formElement.addEventListener('submit', handleFormSubmit);

@@ -5,6 +5,7 @@
     margin-right: auto;
     justify-content: space-between;
     margin-top: 37px;
+    align-items: center;
 }
 @media screen and (max-width: 1279px) {
     .profile{

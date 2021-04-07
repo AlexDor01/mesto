@@ -4,4 +4,18 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     margin-bottom: 30px;
     outline: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.form__input:last-of-type{
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 767px){
+    .form__input{
+        font-size: 12px;
+    }
 }
