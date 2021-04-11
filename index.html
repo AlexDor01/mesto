@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang='ru'>
+
 <head>
     <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -7,6 +8,7 @@
     <title>Место</title>
     <link rel='stylesheet' href='./pages/index.css'>
 </head>
+
 <body class='page'>
     <header class='header'>
         <img src='./images/logo.svg' class='header__logo' alt='Логотип'>
@@ -26,60 +28,81 @@
             <button class='profile__button' type='button'></button>
         </section>
         <section class='elements'>
-            <article class='elements__item'>
-                <img src='./images/Dombai.jpg' class='elements__img' alt='Домбай'>
-                <div class='elements__description'>
-                    <h2 class='elements__title'>Домбай</h2>
-                    <button type='button' class='elements__like'></button>
-                </div>
-            </article>
-            <article class='elements__item'>
-                <img src='./images/Elbrus.jpg' class='elements__img' alt='Эльбрус'>
-                <div class='elements__description'>
-                    <h2 class='elements__title'>Гора Эльбрус</h2>
-                    <button type='button' class='elements__like'></button>
-                </div>
-            </article>
-            <article class='elements__item'>
-                <img src='./images/karach.jpg' class='elements__img' alt='Карачаевск'>
-                <div class='elements__description'>
-                    <h2 class='elements__title'>Карачаевск</h2>
-                    <button type='button' class='elements__like'></button>
-                </div>
-            </article>
-            <article class='elements__item'>
-                <img src='./images/Dombai.jpg' class='elements__img' alt='Домбай'>
-                <div class='elements__description'>
-                    <h2 class='elements__title'>Домбай</h2>
-                    <button type='button' class='elements__like'></button>
-                </div>
-            </article>
-            <article class='elements__item'>
-                <img src='./images/Elbrus.jpg' class='elements__img' alt='Эльбрус'>
-                <div class='elements__description'>
-                    <h2 class='elements__title'>Гора Эльбрус</h2>
-                    <button type='button' class='elements__like'></button>
-                </div>
-            </article>
-            <article class='elements__item'>
-                <img src='./images/karach.jpg' class='elements__img' alt='Карачаевск'>
-                <div class='elements__description'>
-                    <h2 class='elements__title'>Карачаевск</h2>
-                    <button type='button' class='elements__like'></button>
-                </div>
-            </article>
+            <ul class='elements__list'>
+                <li class='elements__item'>
+                    <img src='https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg' class='elements__img' alt='Архыз'>
+                    <button type='button' class='elements__button'></button>
+                    <div class='elements__description'>
+                        <h2 class='elements__title'>Архыз</h2>
+                        <button type='button' class='elements__like'></button>
+                    </div>
+                </li>
+                <li class='elements__item'>
+                    <img src='https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg' class='elements__img' alt='Челябинская область'>
+                    <button type='button' class='elements__button'></button>
+                    <div class='elements__description'>
+                        <h2 class='elements__title'>Челябинская область</h2>
+                        <button type='button' class='elements__like'></button>
+                    </div>
+                </li>
+                <li class='elements__item'>
+                    <img src='https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg' class='elements__img' alt='Иваново'>
+                    <button type='button' class='elements__button'></button>
+                    <div class='elements__description'>
+                        <h2 class='elements__title'>Иваново</h2>
+                        <button type='button' class='elements__like'></button>
+                    </div>
+                </li>
+                <li class='elements__item'>
+                    <img src='https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg' class='elements__img' alt='Байкал'>
+                    <button type='button' class='elements__button'></button>
+                    <div class='elements__description'>
+                        <h2 class='elements__title'>Байкал</h2>
+                        <button type='button' class='elements__like'></button>
+                    </div>
+                </li>
+                <li class='elements__item'>
+                    <img src='https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg' class='elements__img' alt='Камчатка'>
+                    <button type='button' class='elements__button'></button>
+                    <div class='elements__description'>
+                        <h2 class='elements__title'>Камчатка</h2>
+                        <button type='button' class='elements__like'></button>
+                    </div>
+                </li>
+                <li class='elements__item'>
+                    <img src='https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg' class='elements__img' alt='Холмогорский район'>
+                    <button type='button' class='elements__button'></button>
+                    <div class='elements__description'>
+                        <h2 class='elements__title'>Холмогорский район</h2>
+                        <button type='button' class='elements__like'></button>
+                    </div>
+                </li>
+            </ul>
         </section>
     </main>
     <footer class='footer'>
         <p class='footer__text'>&copy; 2021 Mesto Russia</p>
     </footer>
-    <div class='popup'>
+    <div class='popup popup__edit'>
         <div class='popup__container'>
             <h2 class='popup__title'>Редактировать профиль</h2>
             <form class='form' name='infoForm'>
                 <fieldset class='form__info'>
-                    <input type='text' class='form__input form__input_type_name' name='inputInfoname'>
-                    <input type='text' class='form__input form__input_type_descr' name='inputInfoDescr'>
+                    <input type='text' class='form__input form__input_type_name' name='inputInfoname' required placeholder='Имя'>
+                    <input type='text' class='form__input form__input_type_descr' name='inputInfoDescr' required placeholder='Немного о себе'>
+                    <button type='submit' class='form__btn'>Сохранить</button>
+                </fieldset>
+            </form>
+            <button class='popup__close-button' type='button'></button>
+        </div>
+    </div>
+    <div class='popup popup__add'>
+        <div class='popup__container'>
+            <h2 class='popup__title'>Новое место</h2>
+            <form class='form' name='infoForm'>
+                <fieldset class='form__info'>
+                    <input type='text' class='form__input form__input_type_place' name='inputInfoPlace' required placeholder='Название'>
+                    <input type='text' class='form__input form__input_type_link' name='inputInfoLink' required placeholder='Ссылка на картинку'>
                     <button type='submit' class='form__btn'>Сохранить</button>
                 </fieldset>
             </form>
@@ -88,4 +111,5 @@
     </div>
     <script src='./scripts/index.js'></script>
 </body>
+
 </html>
