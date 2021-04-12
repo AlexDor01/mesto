@@ -80,12 +80,36 @@ function handlerAddFormSubmit(evt) {
   const InputPlaceAdd = popupPlaceInput.value;
   const InputLinkAdd = popupLinkInput.value;
 
-  const cardElement = cardElementTemplate.cloneNode(true);
-  const cardElementName = cardElement.querySelector('.elements__title');
-  cardElementName.textContent = InputPlaceAdd.name;
-  const cardElementImg = cardElement.querySelector('.elements__img');
-  cardElementImg.src = InputLinkAdd.link;
+  const elementItem = elementItemTemplate.cloneNode(true);
+  const elementItemName = elementItem.querySelector('.elements__title');
+  elementItemName.textContent = InputPlaceAdd.name;
+  const elementItemImg = elementItem.querySelector('.elements__img');
+  elementItemImg.src = InputLinkAdd.link;
   closePopup(popupAdd);
   cardElementList.prepend(cardElement);
 }
 popupAdd.addEventListener('submit', handlerAddFormSubmit);
+
+const elementItemTemplate = document.querySelector('.elements-item-template').content.querySelector('.elements__item');
+const elementItemList = document.querySelector('.elements__list');
+function initialCard(item) {
+  const elementItem = elementItemTemplate.cloneNode(true);
+  const elementItemName = elementItem.querySelector('.elements__title');
+  elementItemName.textContent = item.name;
+  const elementItemImg = elementItem.querySelector('.elements__img');
+  elementItemImg.src = item.link;
+  elementItemImg.alt = item.name;
+
+  const LikeBtn = elementItem.querySelector('.elements__like');
+  LikeBtn.addEventListener('click', () => {
+    LikeBtn.classList.add('elements__like_active');
+  });
+
+  const delBtn = elementItem.querySelector('.elements__button');
+  delBtn.addEventListener('click', () => {
+    elementItem.remove();
+  });
+
+  elementItemList.prepend(elementItem);
+
+}
