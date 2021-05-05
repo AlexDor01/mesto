@@ -96,8 +96,7 @@ function handlerFormSubmitEdit(evt) {
 
 function handlerFormSubmitAdd(evt) {
   evt.preventDefault();
-  addCardList({ name: popupInputPlaceAdd.value, link: popupInputLinkAdd.value }
-  );
+  addCardList({ name: popupPlaceInput.value, link: popupLinkInput.value });
   popupAddForm.reset();
   closePopup(popupAdd);
 }
@@ -143,11 +142,4 @@ function createElement(item) {
   elementItemImg.addEventListener('click', () => handlerImgPrv(item.link, item.name));
   return elementItem;
 }
-//const inpImg = popupAdd.querySelector('.form__input form__input_type_link');
-//const inpTitle = popupAdd.querySelector('.form__input form__input_type_place');
-
-//function handlerSubmitForm(evt){
-  //evt.preventDefault();
-  //initialCard(createCard(inpTitle.value, inpImg.value));
- // closePopup(popupAdd);
-//}
+//popupAdd.addEventListener('submit', handlerFormSubmitAdd);
