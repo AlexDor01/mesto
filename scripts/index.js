@@ -92,7 +92,7 @@ const initialCards = [
 
 function handlerFormSubmitAdd(evt) {
   evt.preventDefault();
-  addCardList({ name: popupPlaceInput.value, link: popupLinkInput.value});
+  addCardList({ name: document.querySelector('.form__input_type_place').value, link: document.querySelector('.form__input_type_link').value });
   popupAddForm.reset();
   closePopup(popupAdd);
 }
