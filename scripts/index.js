@@ -64,7 +64,14 @@ document.addEventListener("DOMContentLoaded", () => {
     document.removeEventListener('keydown', closePopupEsc);
 
   }
-
+  function closeOverlayPopup(evt) {
+    if (evt.target.classList.contains('popup_opened')) {
+    const popup = document.querySelector('.popup_opened');
+    closePopup(popup)
+    }
+    }
+     
+    document.addEventListener('click', closeOverlayPopup);
   
   
   closePopupAdd.addEventListener('click', function () {
