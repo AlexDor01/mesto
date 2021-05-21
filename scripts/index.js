@@ -25,6 +25,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const popups = Array.from(document.querySelectorAll('.popup'));
 
+  function closeOverlayPopups (popups) {
+    popups.forEach(popup => {
+      popup.addEventListener('click', function (evt) {
+        if (evt.target.classList.contains('.popup_opened')) {
+          closePopup(popup)
+        }
+      })
+    }); 
+  }
+  
+  //закрытие попапа по нажатию Esc
+  function closePopupEsc(evt) {
+    if(evt.key === 'Escape') {
+      const popup = document.querySelector('.popup_opened');
+      closePopup(popup);
+    }
+  }
+  
+  
+  
+
   //Открытие и закрытие попапов
   openPopupBtn.addEventListener('click', function () {
     openPopup(popupEdit);
@@ -36,18 +57,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   function openPopup(popup) {
     popup.classList.add('popup_opened');
+    document.addEventListener('keydown', closePopupEsc);
   }
   function closePopup(popup) {
     popup.classList.remove('popup_opened');
     document.removeEventListener('keydown', closePopupEsc);
+
   }
 
-  function closePopupEsc(evt) {
-    if(evt.key === 'Escape') {
-      const popup = document.querySelector('.popup_opened');
-      closePopup(popup);
-    }
-  }
+  
   
   closePopupAdd.addEventListener('click', function () {
     closePopup(popupAdd);
@@ -66,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     closePopup(popupEdit);
   }
   formElement.addEventListener('submit', handleFormSubmit);
+  closeOverlayPopups(popups);
 
   const initialCards = [
     {
@@ -147,17 +166,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   popupAdd.addEventListener('submit', handlerFormSubmitAdd);
 })
-
-const closeOverlayPopup = (popups) => {
-popups.forEach(popup => {
-  popup.addEventListener('click', function (evt) {
-    if (evt.target.classList.contains('popup__opened')) {
-      closePopup(popup)
-    }
-  })
-});
-}
-
 
 
 
