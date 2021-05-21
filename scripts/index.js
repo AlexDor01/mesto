@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const popup = document.querySelector('.popup');
   const popupEdit = document.querySelector('.popup_type_edit');
   const popupAdd = document.querySelector('.popup_type_add');
   const popupImg = document.querySelector('.popup_type_img');
@@ -37,9 +38,17 @@ document.addEventListener("DOMContentLoaded", () => {
     popup.classList.add('popup_opened');
   }
   function closePopup(popup) {
-    popup.classList.remove('popup_opened')
+    popup.classList.remove('popup_opened');
+    document.removeEventListener('keydown', closePopupEsc);
   }
 
+  function closePopupEsc(evt) {
+    if(evt.key === 'Escape') {
+      const popup = document.querySelector('.popup_opened');
+      closePopup(popup);
+    }
+  }
+  
   closePopupAdd.addEventListener('click', function () {
     closePopup(popupAdd);
   });
@@ -90,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function handlerFormSubmitAdd(evt) {
     evt.preventDefault();
     addCardList({ name: document.querySelector('.form__input_type_place').value, link: document.querySelector('.form__input_type_link').value });
-    popupAddForm.reset(); //Если здесь вызывать через константы, то попап добавления не будет работать
+    popupAddForm.reset(); 
     closePopup(popupAdd);
   }
 
@@ -138,4 +147,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   popupAdd.addEventListener('submit', handlerFormSubmitAdd);
 })
+
+const closeOverlayPopup = (popups) => {
+popups.forEach(popup => {
+  popup.addEventListener('click', function (evt) {
+    if (evt.target.classList.contains('popup__opened')) {
+      closePopup(popup)
+    }
+  })
+});
+}
+
+
+
+
 
