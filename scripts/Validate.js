@@ -1,4 +1,4 @@
-const enableValidation = {
+const Validation = {
     formSelector: '.form',
     inputSelector: '.form__input',
     submitButtonSelector: '.form__btn',
@@ -64,10 +64,10 @@ const toggleButtonState = (inputList, buttonElement, inactiveButtonClass) => {
     }
     else {
         activeSubmitBtn(buttonElement, inactiveButtonClass);
-    };
+    }; //Объясните, пожалуста, подробнее об оставшихся ошибках
 };
 
-const beginValidation = ({ formSelector, inputSelector, submitButtonSelector, inactiveButtonClass, inputErrorClass, errorClass }) => {
+const enableValidation = ({ formSelector, inputSelector, submitButtonSelector, inactiveButtonClass, inputErrorClass, errorClass }) => {
     const formList = Array.from(document.querySelectorAll(formSelector));
 
     formList.forEach(formElement => {
@@ -75,4 +75,4 @@ const beginValidation = ({ formSelector, inputSelector, submitButtonSelector, in
     });
 };
 
-beginValidation(enableValidation);
+enableValidation(Validation);
