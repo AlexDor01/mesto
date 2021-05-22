@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const closePopupImg = popupImg.querySelector('.popup__close-button');
   const popupNameInput = popupContainer.querySelector('.form__input_type_name');
   const popupDescrInput = popupContainer.querySelector('.form__input_type_descr');
-  const profile = document.querySelector('.profile');
   const profileInfo = document.querySelector('.profile__info');
   const profileName = profileInfo.querySelector('.profile__title');
   const profileDescr = profileInfo.querySelector('.profile__subtitle');
@@ -25,26 +24,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const popups = Array.from(document.querySelectorAll('.popup'));
 
-  function closeOverlayPopups (popups) {
+  function closeOverlayPopups(popups) {
     popups.forEach(popup => {
       popup.addEventListener('click', function (evt) {
         if (evt.target.classList.contains('.popup_opened')) {
           closePopup(popup)
         }
       })
-    }); 
+    });
   }
-  
+
+  function closeOverlayPopup(evt) {
+    if (evt.target.classList.contains('popup_opened')) {
+      const popup = document.querySelector('.popup_opened');
+      closePopup(popup)
+    }
+  }
+
+  document.addEventListener('click', closeOverlayPopup);
+
   //закрытие попапа по нажатию Esc
   function closePopupEsc(evt) {
-    if(evt.key === 'Escape') {
+    if (evt.key === 'Escape') {
       const popup = document.querySelector('.popup_opened');
       closePopup(popup);
     }
   }
-  
-  
-  
+
+
+
 
   //Открытие и закрытие попапов
   openPopupBtn.addEventListener('click', function () {
@@ -64,16 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.removeEventListener('keydown', closePopupEsc);
 
   }
-  function closeOverlayPopup(evt) {
-    if (evt.target.classList.contains('popup_opened')) {
-    const popup = document.querySelector('.popup_opened');
-    closePopup(popup)
-    }
-    }
-     
-    document.addEventListener('click', closeOverlayPopup);
-  
-  
+
+
+
   closePopupAdd.addEventListener('click', function () {
     closePopup(popupAdd);
   });
@@ -125,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function handlerFormSubmitAdd(evt) {
     evt.preventDefault();
     addCardList({ name: document.querySelector('.form__input_type_place').value, link: document.querySelector('.form__input_type_link').value });
-    popupAddForm.reset(); 
+    popupAddForm.reset();
     closePopup(popupAdd);
   }
 
@@ -145,9 +146,8 @@ document.addEventListener("DOMContentLoaded", () => {
     openPopup(popupImg);
   };
 
-  const elementItemList = document.querySelector('.elements__list');
 
-  
+
   initialCards.forEach(addCardList);
 
 
