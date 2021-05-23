@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const popup = document.querySelector('.popup_opened');
       closePopup(popup)
     }
-  }
+  }// Объясните, пожалуйста, как лучше тут поступить: если удалить какую-либо функцию, пропадают карточки
 
   document.addEventListener('click', closeOverlayPopup);
 

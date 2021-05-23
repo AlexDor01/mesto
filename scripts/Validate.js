@@ -64,7 +64,7 @@ const toggleButtonState = (inputList, buttonElement, inactiveButtonClass) => {
     }
     else {
         activeSubmitBtn(buttonElement, inactiveButtonClass);
-    }; //Объясните, пожалуста, подробнее об оставшихся ошибках
+    }; //И вот тут тоже, если честно, не очень понятно, объясните подробнее, пожалуйста
 };
 
 const enableValidation = ({ formSelector, inputSelector, submitButtonSelector, inactiveButtonClass, inputErrorClass, errorClass }) => {
