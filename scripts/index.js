@@ -27,21 +27,15 @@ document.addEventListener("DOMContentLoaded", () => {
   function closeOverlayPopups(popups) {
     popups.forEach(popup => {
       popup.addEventListener('click', function (evt) {
-        if (evt.target.classList.contains('.popup_opened')) {
+        if (evt.target.classList.contains('popup_opened')) {
           closePopup(popup)
         }
       })
     });
   }
 
-  function closeOverlayPopup(evt) {
-    if (evt.target.classList.contains('popup_opened')) {
-      const popup = document.querySelector('.popup_opened');
-      closePopup(popup)
-    }
-  }// Объясните, пожалуйста, как лучше тут поступить: если удалить какую-либо функцию, пропадают карточки
 
-  document.addEventListener('click', closeOverlayPopup);
+  
 
   //закрытие попапа по нажатию Esc
   function closePopupEsc(evt) {

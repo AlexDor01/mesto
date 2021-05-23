@@ -1,4 +1,4 @@
-const Validation = {
+const validationConfig = {
     formSelector: '.form',
     inputSelector: '.form__input',
     submitButtonSelector: '.form__btn',
@@ -31,12 +31,14 @@ const checkInvalid = (formElement, inputElement, inputErrorClass, errorClass) =>
 };
 
 const disabledSubmitBtn = (buttonElement, inactiveButtonClass) => {
-    buttonElement.setAttribute('disabled', true);
+    console.log(buttonElement)
+    buttonElement.disabled = true;
     buttonElement.classList.add(inactiveButtonClass);
 };
 
 const activeSubmitBtn = (buttonElement, inactiveButtonClass) => {
     buttonElement.removeAttribute('disabled', true);
+    
     buttonElement.classList.remove(inactiveButtonClass);
 };
 
@@ -56,23 +58,29 @@ const setEventListener = (formElement, inputSelector, submitButtonSelector, inac
     });
 };
 
-const toggleButtonState = (inputList, buttonElement, inactiveButtonClass) => {
-    const isInvalidInput = inputList.some(inputElement => !inputElement.validity.valid);
-    const inputEmpty = !inputList.some(inputElement => inputElement.value.length > 0);
-    if (isInvalidInput || inputEmpty) {
+const hasInvalidInput = (inputList) => {
+    return inputList.some((inputElement) => {
+        console.log(inputElement.validity)
+      return !inputElement.validity.valid;
+    });
+   
+  }; 
+const toggleButtonState = (buttonElement, inactiveButtonClass) => {
+    if (hasInvalidInput || inputEmpty) {
         disabledSubmitBtn(buttonElement, inactiveButtonClass);
     }
     else {
         activeSubmitBtn(buttonElement, inactiveButtonClass);
-    }; //И вот тут тоже, если честно, не очень понятно, объясните подробнее, пожалуйста
+    };
 };
 
 const enableValidation = ({ formSelector, inputSelector, submitButtonSelector, inactiveButtonClass, inputErrorClass, errorClass }) => {
     const formList = Array.from(document.querySelectorAll(formSelector));
 
     formList.forEach(formElement => {
-        setEventListener(formElement, inputSelector, submitButtonSelector, inactiveButtonClass, inputErrorClass, errorClass);
+        setEventListener(formElement, inputSelector, inactiveButtonClass, submitButtonSelector, inputErrorClass, errorClass);
+    console.log(setEventListener)
     });
 };
 
-enableValidation(Validation);
+enableValidation(validationConfig);
