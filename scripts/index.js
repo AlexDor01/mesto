@@ -1,4 +1,4 @@
-import { initialCards } from './initial-cards';
+import { initialCards } from './initial-cards.js';
 import { ValidationConfig } from './Validate.js';
 import { Card } from './Card.js';
 
@@ -99,12 +99,12 @@ initialCards.forEach((item) => {
 
 function addCardList(data) {
   const elementItem = createElement(data);
-  elementItemList.prepend(elementItem);
+  cardsContainer.prepend(elementItem);
 }
 
 function createElement(data) {
   const templateSelector = '.elements-item-template';
-  const newCard = new Card(data, templateSelector, handlerImgPrv);
+  const newCard = new Card(data, templateSelector, handlePreviewImage);
   const newCardCreated = newCard.generateCard();
   return newCardCreated;
 }
