@@ -8,7 +8,7 @@ export class ValidationConfig {
         this._errorClass = objectForm.errorClass;
         this._inactiveButtonClass = objectForm.inactiveButtonClass;
         this._inputList = Array.from(this._elementForm.querySelectorAll(this._inputSelector));
-        this._buttonElement = this._elementForm.querySelector(this.__submitButtonSelector);
+        this._buttonElement = this._elementForm.querySelector(this._submitButtonSelector);
     };
 
     _showInputError(inputElement) {
