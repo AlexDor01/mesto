@@ -32,10 +32,8 @@ const popupImgPhoto = popupImg.querySelector('.popup__img-ph');
 const popupImgTitle = popupImg.querySelector('.popup__img-name')
 
 const cardsContainer = document.querySelector('.elements');
-const cardTemplate = document.querySelector('.elements-item-template').content.querySelector('.elements__item');
 
 const popups = Array.from(document.querySelectorAll('.popup'));
-const elementItemList = document.querySelector('.elements__item')
 
 function closeOverlayPopups(popups) {
   popups.forEach(popup => {
@@ -134,6 +132,6 @@ function validateForm(elementForm) {
   return validator;
 }
 
-const popupEditValidator = validateForm(popupEditForm);
-const popupAddValidator = validateForm(popupAddForm);
+const popupEditValidator = validateForm(popupEdit);
+const popupAddValidator = validateForm(popupAdd);
 

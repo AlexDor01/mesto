@@ -33,7 +33,7 @@ export class ValidationConfig {
 
     _desactivateButton() {
         this._buttonElement.disabled = true;
-        this._buttonelement.classList.add(this._objectForm.inactiveButtonClass);
+        this._buttonElement.classList.add(this._objectForm.inactiveButtonClass);
     }
 
     _toggleButtonstate() {
