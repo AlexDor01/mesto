@@ -12,7 +12,7 @@ export class ValidationConfig {
     };
 
     _showInputError(inputElement) {
-        const errorElement = this._elementForm.querySelector(`#{inputElement.id}-error`);
+        const errorElement = this._elementForm.querySelector(`#${inputElement.id}-error`);
         inputElement.classList.add(this._inputErrorClass);
         errorElement.classList.add(this._errorClass);
         errorElement.textContent = inputElement.validationMessage;
