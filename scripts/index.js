@@ -17,14 +17,13 @@ const popupImg = document.querySelector('.popup_type_img');
 const popupAddForm = document.querySelector('.popup-add-form');
 const openPopupBtn = document.querySelector('.profile__change');
 const openPopupAdd = document.querySelector('.profile__button');
-const popupContainer = document.querySelector('.popup__container');
 const closePopupEdit = popupEdit.querySelector('.popup__close-button');
 const closePopupAdd = popupAdd.querySelector('.popup__close-button');
 const closePopupImg = popupImg.querySelector('.popup__close-button');
-const popupNameInput = popupContainer.querySelector('.form__input_type_name');
-const popupDescrInput = popupContainer.querySelector('.form__input_type_descr');
-const popupPlaceInput = popupContainer.querySelector('.form__input_type_place');
-const popupLinkInput = popupContainer.querySelector('.form__input_type_link');
+const popupNameInput = popupEdit.querySelector('.form__input_type_name');
+const popupDescrInput = popupEdit.querySelector('.form__input_type_descr');
+const popupPlaceInput = popupAdd.querySelector('.form__input_type_place');
+const popupLinkInput = popupAdd.querySelector('.form__input_type_link');
 const profileInfo = document.querySelector('.profile__info');
 const profileName = profileInfo.querySelector('.profile__title');
 const profileDescr = profileInfo.querySelector('.profile__subtitle');
@@ -109,9 +108,9 @@ function createElement(data) {
 
 function handleSubmitAdd(evt) {
   evt.preventDefault();
-  addCardList({ name: document.querySelector('.form__input_type_place').value, link: document.querySelector('.form__input_type_link').value }, handlePreviewImage, '.elements-item-template');
-  popupAddForm.reset();//Если здесь использовать константы, popupPlaceInput и popupLinkInput, то попап добавления почему-то не работает
-  closePopup(popupAdd); // Такое было у меня уже в 5 работе. Я вверху объявил эти константы и вставил их сюда, но попап не работает почему-то
+  addCardList({ name: popupPlaceInput.value, link: popupLinkInput.value }, handlePreviewImage, '.elements-item-template');
+  popupAddForm.reset();
+  closePopup(popupAdd); 
 }
 
 closeOverlayPopups(popups);
