@@ -1,12 +1,12 @@
 export class ValidationConfig { 
-    constructor(objectForm, elementForm) { 
-        this._objectForm = objectForm; 
+    constructor(config, elementForm) { 
+        this._config = config; 
         this._elementForm = elementForm; 
-        this._inputSelector = objectForm.inputSelector; 
-        this._submitButtonSelector = objectForm.submitButtonSelector; 
-        this._inputErrorClass = objectForm.inputErrorClass; 
-        this._errorClass = objectForm.errorClass; 
-        this._inactiveButtonClass = objectForm.inactiveButtonClass; 
+        this._inputSelector = config.inputSelector; 
+        this._submitButtonSelector = config.submitButtonSelector; 
+        this._inputErrorClass = config.inputErrorClass; 
+        this._errorClass = config.errorClass; 
+        this._inactiveButtonClass = config.inactiveButtonClass; 
         this._inputList = Array.from(this._elementForm.querySelectorAll(this._inputSelector)); 
         this._buttonElement = this._elementForm.querySelector(this._submitButtonSelector); 
     }; 
@@ -33,7 +33,7 @@ export class ValidationConfig {
  
     _desactivateButton() { 
         this._buttonElement.disabled = true; 
-        this._buttonElement.classList.add(this._objectForm.inactiveButtonClass); 
+        this._buttonElement.classList.add(this._config.inactiveButtonClass); 
     } 
  
     _toggleButtonstate() { 
