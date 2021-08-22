@@ -14,16 +14,17 @@ export class Card {
         this._card = cardTemplate.cloneNode(true);
 
         this._buttonLike = this._card.querySelector('.elements__like');
+        
         this._buttonRemove = this._card.querySelector('.elements__button');
         this._cardImg = this._card.querySelector('.elements__img');
-        this._cardDescription = this._card.querySelector('.elements__description');
+        this._cardDescription = this._card.querySelector('.elements__title');
 
 
         this._cardDescription.textContent = this._name;
         this._cardImg.src = this._link;
         this._cardImg.alt = this._name;
     };
-
+    
     _setEventListenersCard() {
         this._buttonRemove.addEventListener('click', () => {
             this._handleDeleteCard()

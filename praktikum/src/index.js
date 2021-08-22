@@ -66,7 +66,6 @@ const userInfo = new UserInfo(userData);
 const popupEditForm = new PopupWithForm({
   popupSelector: '.popup_type_edit',
   submitOn: (data) => {
-    console.log(data)
     userInfo.setUserInfo(data)
     popupEditForm.close();
   }
