@@ -1,5 +1,5 @@
-import { initialCards } from '../utils/initial-cards.js';
-import { ValidationConfig } from '../components/Validate.js';
+import { initialCards, config } from '../utils/constants.js';
+import { FormValidator } from '../components/FormValidator.js';
 import { Card } from '../components/Card.js';
 import { PopupWithForm } from '../components/PopupWithForm.js';
 import { PopupWithImage } from '../components/PopupWithImage.js';
@@ -9,14 +9,7 @@ import './index.css';
 
 
  
-const config = {
-  formSelector: '.form',
-  inputSelector: '.form__input',
-  submitButtonSelector: '.form__btn',
-  inactiveButtonClass: 'form__btn_disabled',
-  inputErrorClass: 'form__input_type_error',
-  errorClass: 'form__input-error_active'
-}
+
  
 const popupEdit = document.querySelector('.popup_type_edit');
 const popupAdd = document.querySelector('.popup_type_add');
@@ -98,10 +91,10 @@ openPopupAdd.addEventListener('click', () => {
   validationAdd.resetValidation();
 });
 
-const validationEdit = new ValidationConfig(config, popupEdit);
+const validationEdit = new FormValidator(config, popupEdit);
 validationEdit.enableValidation();
 
-const validationAdd = new ValidationConfig(config, popupAdd);
+const validationAdd = new FormValidator(config, popupAdd);
 validationAdd.enableValidation();
 
 

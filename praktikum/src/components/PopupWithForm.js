@@ -12,9 +12,9 @@ export class PopupWithForm extends Popup {
             this._formValues[input.name] = input.value;
         })
         return this._formValues
-    }
-    setEventListeners() {
-        super.setEventListeners();
+    }     //Я не совсем понимаю, как мне исправить баг с карточками. 
+    setEventListeners() {           //В Слэке уже спрашивал, Вы не могли бы подсказать место примерное, 
+        super.setEventListeners();   //у меня будто ключи теряются, но при попытке заменить их все слетает
 
         this.formElement = this.popup.querySelector('.form')
         this.formElement.addEventListener('submit', (evt) => {
