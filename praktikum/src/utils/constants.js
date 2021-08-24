@@ -32,3 +32,8 @@ export const config = {
     inputErrorClass: 'form__input_type_error',
     errorClass: 'form__input-error_active'
   }
+
+  export const userData = {
+    name: '.profile__title',
+    job: '.profile__subtitle'
+  };

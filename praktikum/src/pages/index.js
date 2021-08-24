@@ -1,4 +1,4 @@
-import { initialCards, config } from '../utils/constants.js';
+import { initialCards, config, userData } from '../utils/constants.js';
 import { FormValidator } from '../components/FormValidator.js';
 import { Card } from '../components/Card.js';
 import { PopupWithForm } from '../components/PopupWithForm.js';
@@ -34,10 +34,7 @@ const cardsContainer = document.querySelector('.elements');
  
 const popups = Array.from(document.querySelectorAll('.popup'));
 
-const userData = {
-  name: '.profile__title',
-  job: '.profile__subtitle'
-};
+
  
 
  
@@ -80,7 +77,11 @@ popupWithImage.setEventListeners();
 const addCardPopup = new PopupWithForm({
   popupSelector: '.popup_type_add',
   submitOn: (cardData) => {
-    cardSection.addItem(cardData);
+    const cardInfo = {
+    name: cardData.inputInfoPlace,
+    link: cardData.inputInfoLink
+  }
+    cardSection.addItem(cardInfo);
     addCardPopup.close();
   }
 });
