@@ -17,7 +17,7 @@ const popupEdit = document.querySelector('.popup_type_edit');
 const popupAdd = document.querySelector('.popup_type_add');
 const popupImg = document.querySelector('.popup_type_img');
 const popupAddForm = document.querySelector('.popup-add-form');
-const popupAvatarForm = document.querySelector('.popup__form_avatar');
+const popupAvatarForm = document.querySelector('.popup_form_avatar');
 const openPopupBtn = document.querySelector('.profile__change');
 const openPopupAdd = document.querySelector('.profile__button');
 const openPopupAvatar = document.querySelector('.profile__review-edit')
@@ -55,7 +55,7 @@ openCardPopup.setEventListeners();
 const openPopupEdit = new UserInfo({ title, subtitle, userAvatar });
 
 
-const removeCardPopup = new PopupWithSubmit('.popup__delete');
+const removeCardPopup = new PopupWithSubmit('.popup_delete');
 removeCardPopup.setEventListeners();
 
 let myUserId = null;
@@ -177,7 +177,7 @@ openPopupAdd.addEventListener('click', function () {
   profileAddFormValidator.resetValidation();
 });
 
-const formAvatar = new PopupWithForm('.popup__refresh', (data) => {
+const formAvatar = new PopupWithForm('.popup_refresh', (data) => {
   formAvatar.renderLoading(true);
   api.changeAvatar(data)
   .then(data => {userAvatar.setAttribute('src', data.avatar);
