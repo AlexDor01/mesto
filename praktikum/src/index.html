@@ -11,10 +11,11 @@
 <body class='page'>
     <header class='header'>
         <img src="<%=require('./images/logo.svg')%>" class='header__logo' alt='Логотип'>
-    </header>    
+    </header>
     <main>
         <section class='profile'>
             <div class='profile__review'>
+                <figure class="profile__review-edit"></figure>
                 <img src="<%=require('./images/zhak.jpg')%>" class='profile__photo' alt='Аватар пользователя'>
                 <div class='profile__info'>
                     <div class='profile__block'>
@@ -35,6 +36,7 @@
                     <div class='elements__description'>
                         <h2 class='elements__title'></h2>
                         <button type='button' class='elements__like'></button>
+                        <span class="element__likes"></span>
                     </div>
                 </li>
             </template>
@@ -85,7 +87,28 @@
             <h2 class='popup__img-name'></h2>
         </div>
     </div>
-    
+    <div class='popup popup__delete'>
+        <div class='popup__container'>
+            <h2 class='popup__title'>Вы уверены?</h2>
+            <form class='form popup-delete-form' type='form' novalidate>
+            <button type='submit' class='popup__delete-button'>Да</button>
+        </form>
+            <button class='popup__close-button' type='button'></button>
+        </div>
+    </div>
+    <div class='popup popup__refresh'>
+        <div class='popup__container'>
+            <button class='popup__close-button' type='button'></button>
+            <h2 class='popup__title'>Обновить аватар</h2>
+            <form class="popup__form_avatar form" type="form" name="profile-name" novalidate>
+                <input class="form__input form__input_type_foto" id="url-inputAvatar" type="url" name="link"
+                    placeholder="Ссылка на фото" required>
+                <span class="form__input-error"></span>
+                <button class="form__btn" type="submit">Сохранить</button>
+            </form>
+        </div>
+    </div>
+
 </body>
 
 </html>
