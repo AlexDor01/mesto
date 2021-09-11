@@ -16,6 +16,6 @@ export class UserInfo {
         this._subtitleSelector.textContent = data.job;
     }
     setUserAvatar(data) {
-        this._avatarSelector.src = data._avatar;
+        this._avatarSelector.src = data.avatar;
     }
 }

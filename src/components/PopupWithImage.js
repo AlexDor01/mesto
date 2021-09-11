@@ -4,13 +4,13 @@ export class PopupWithImage extends Popup {
     constructor(popupSelector) {
         super(popupSelector)
 
-        this.nameCard = this.popupElement.querySelector('.popup__img-name'),
-            this.linkCard = this.popupElement.querySelector('.popup__img-ph')
+        this._popupPrvImg = this.popupElement.querySelector('.popup__img-ph'),
+        this._popupPrwTitle = this.popupElement.querySelector('.popup__img-name')
     }
     open(data) {
-        this.linkCard.src = data.link;
-        this.nameCard.textContent = data.name;
-        this.nameCard.alt = data.name;
+        this._popupPrvImg.src = data.link;
+        this._popupPrvImg.alt = data.name;
+        this._popupPrwTitle.textContent = data.name;
         super.open();
     }
 }

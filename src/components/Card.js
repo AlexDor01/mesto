@@ -19,19 +19,13 @@ _makeElements() {
     return this._cardElement;
 }
 
-_setEventListeners() {
+_setEventListener() {
     this._buttonRemove = this._cardElement.querySelector('.elements__button');
     this._buttonLike = this._cardElement.querySelector('.elements__like');
     this._cardImg = this._cardElement.querySelector('.elements__img');
-    this._buttonRemove.addEventListener('click', () => {
-        this.handleRemoveClick()
-    });
-    this._buttonLike.addEventListener('click', () => { 
-        this.handleLikeClick() 
-    }); 
-    this._cardImg.addEventListener('click', () => { 
-        this.handleCardClick() 
-    }); 
+    this._buttonRemove.addEventListener('click', () => this.handleRemoveClick(this._id));
+    this._buttonLike.addEventListener('click', () => this.handleLikeClick()); 
+    this._cardImg.addEventListener('click', () => this.handleCardClick()); 
 }
 
 _checkMyLike() {
@@ -44,7 +38,7 @@ _checkMyLike() {
 
 render() {
     this._cardElement = this._makeElements();
-    this._setEventListeners();
+    this._setEventListener();
 
     this._checkMyLike();
     this._cardElement.querySelector('.elements__title').textContent = this._title;

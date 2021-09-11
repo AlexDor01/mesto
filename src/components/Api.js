@@ -62,7 +62,7 @@ export class Api {
             method: 'DELETE',
             headers: this._headers
         })
-        .then(this_getResponse)
+        .then(this._getResponse)
     }
 
     deleteLike(cardId) {

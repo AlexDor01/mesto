@@ -3,14 +3,14 @@ import { Popup } from './Popup.js'
 export class PopupWithForm extends Popup {
     constructor( popupSelector, submitOn ) {
         super(popupSelector)
-        this._submitOn = submitOn
+        this._submitOn = submitOn;
         this.saveButton = document.querySelector('.form__btn');
         this._formElement = document.querySelector('.form');
     }
 
     _getInputvalues() {
         const result = {};
-        const inputs = Array.from(this.formElement.querySelectorAll('.form__input'));
+        const inputs = Array.from(this._formElement.querySelectorAll('.form__input'));
         inputs.forEach(input => {
             result[input.name] = input.value;
         })
@@ -34,11 +34,11 @@ export class PopupWithForm extends Popup {
     setEventListeners() {            
         super.setEventListeners();    
  
-        this.formElement = this.popupElement.querySelector('.form') 
-        this.formElement.addEventListener('submit', (evt) => { 
-            evt.preventDefault(); 
-            this._submitOn(this._getInputValues()); 
-        }); 
+        this._formElement.addEventListener('submit', (evt) => {
+            evt.preventDefault()
+            const cardData = this._getInputvalues();
+            this._submitOn(cardData);
+        })
     }  
 
 }

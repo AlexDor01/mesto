@@ -1,4 +1,4 @@
-import { initialCards, config, userData } from '../utils/constants.js';
+import { initialCards, configValidator, userData } from '../utils/constants.js';
 import { FormValidator } from '../components/FormValidator.js';
 import { Card } from '../components/Card.js';
 import { PopupWithForm } from '../components/PopupWithForm.js';
@@ -55,7 +55,7 @@ openCardPopup.setEventListeners();
 const openPopupEdit = new UserInfo({ title, subtitle, userAvatar });
 
 
-const removeCardPopup = new PopupWithSubmit('.popup_delete');
+const removeCardPopup = new PopupWithSubmit('.popup_delete')
 removeCardPopup.setEventListeners();
 
 let myUserId = null;
@@ -146,13 +146,13 @@ function handleCardDelete(cardId) {
 
   const popupEditForm = new PopupWithForm('.popup_type_edit', (data) => {
     popupEditForm.renderLoading(true)
-    api.setUserInfoData.renderLoading(data)
+    api.setUserInfoData(data)
       .then(() => {
-        openPopupEdit.setUserInfoData(data);
+        openPopupEdit.setUserInfo(data);
         popupEditForm.close();
       })
       .catch((err) => {
-        console.err(err);
+        console.error(err);
       })
       .finally(() => {
         popupEditForm.renderLoading(false);
@@ -166,15 +166,17 @@ openPopupBtn.addEventListener('click', () => {
 document.querySelector('.popup-edit-form').reset();
 popupEditForm.open();
 const data = openPopupEdit.getUserInfo();
-popupNameInput.value = data.name;
-popupDescrInput.value = data.job;
+popupNameInput.value = data.nameSelector;
+popupDescrInput.value = data.jobSelector;
 profileEditFormValidator.resetValidation();
+
 });
 
 openPopupAdd.addEventListener('click', function () {
   popupAddForm.reset();
   addCardPopup.open();
   profileAddFormValidator.resetValidation();
+ 
 });
 
 const formAvatar = new PopupWithForm('.popup_refresh', (data) => {
@@ -196,19 +198,20 @@ openPopupAvatar.addEventListener('click', () => {
 popupAvatarForm.reset();
 formAvatar.open();
 profileAvatarFormValidator.resetValidation();
+
 })
 
 const profileEditFormValidator = new FormValidator(
-  config, document.querySelector('.popup-edit-form')
+  configValidator, document.querySelector('.popup-edit-form')
 );
 profileEditFormValidator.enableValidation();
 
 const profileAddFormValidator = new FormValidator(
-  config, popupAddForm
+  configValidator, popupAddForm
 );
 profileAddFormValidator.enableValidation();
 
 const profileAvatarFormValidator = new FormValidator(
-  config, popupAvatarForm
+  configValidator, popupAvatarForm
 );
 profileAvatarFormValidator.enableValidation();
