@@ -1,16 +1,17 @@
-import { Popup } from './Popup.js'
+import { Popup } from "./Popup.js";
 
 export class PopupWithForm extends Popup {
-    constructor( popupSelector, submitOn ) {
-        super(popupSelector)
+    constructor(popupSelector, submitOn) {
+        super(popupSelector);
         this._submitOn = submitOn;
-        this.saveButton = document.querySelector('.form__btn');
-        this._formElement = document.querySelector('.form');
+        this.saveButton = this.popupElement.querySelector('.form__btn');
+        this._formElement = this.popupElement.querySelector('.form');
     }
 
-    _getInputvalues() {
+    _getInputValues() {
         const result = {};
         const inputs = Array.from(this._formElement.querySelectorAll('.form__input'));
+
         inputs.forEach(input => {
             result[input.name] = input.value;
         })
@@ -25,20 +26,18 @@ export class PopupWithForm extends Popup {
     renderLoading(isLoading) {
         if (isLoading) {
             this.saveButton.textContent = 'Сохранение...'
-        }
-        else {
+        } else {
             this.saveButton.textContent = 'Сохранить'
         }
     }
 
-    setEventListeners() {            
-        super.setEventListeners();    
- 
+    setEventListeners() {
+        super.setEventListeners();
+
         this._formElement.addEventListener('submit', (evt) => {
             evt.preventDefault()
-            const cardData = this._getInputvalues();
+            const cardData = this._getInputValues();
             this._submitOn(cardData);
         })
-    }  
-
+    }
 }

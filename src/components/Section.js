@@ -1,12 +1,13 @@
 export class Section {
     constructor({ renderer }, containerSelector) {
         this._renderer = renderer;
-        this._element = document.querySelector(containerSelector)
+        this._element = document.querySelector(containerSelector);
     }
-    renderAll(items) {
+
+    rendererAll(items) {
         items.forEach(cardData => {
-            this.addItem(cardData);
-        })
+            this.addItem(cardData)
+        });
     }
 
     addItem(cardData, myElement = false) {
@@ -14,7 +15,6 @@ export class Section {
             this._element.prepend(this._renderer(cardData));
         } else {
             this._element.append(this._renderer(cardData));
-
         }
     }
 }
