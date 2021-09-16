@@ -1,23 +1,23 @@
 export class UserInfo {
     constructor({ title, subtitle, userAvatar }) {
-        this._titleSelector = title;
-        this._subtitleSelector = subtitle;
-        this._avatarSelector = userAvatar;
+        this._title = title;
+        this._subtitle = subtitle;
+        this._avatar = userAvatar;
     }
 
     getUserInfo() {
         const data = {};
-        data.nameSelector = this._titleSelector.textContent;
-        data.jobSelector = this._subtitleSelector.textContent;
+        data.nameSelector = this._title.textContent;
+        data.jobSelector = this._subtitle.textContent;
         return data;
     }
 
     setUserInfo(data) {
-        this._titleSelector.textContent = data.name;
-        this._subtitleSelector.textContent = data.job;
+        this._title.textContent = data.name;
+        this._subtitle.textContent = data.job;
     }
 
     setUserAvatar(data) {
-        this._avatarSelector.src = data.avatar;
+        this._avatar.src = data.avatar;
     }
 }

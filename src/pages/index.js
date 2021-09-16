@@ -14,29 +14,18 @@ import { PopupWithSubmit } from '../components/PoupWithSubmit.js';
 
 
 const popupEdit = document.querySelector('.popup_type_edit');
-const popupAdd = document.querySelector('.popup_type_add');
-const popupImg = document.querySelector('.popup_type_img');
 const popupAddForm = document.querySelector('.popup-add-form');
-const popupAvatarForm = document.querySelector('.popup-form-avatar');
 const openPopupBtn = document.querySelector('.profile__change');
 const openPopupAdd = document.querySelector('.profile__button');
 const openPopupAvatar = document.querySelector('.profile__review-edit')
-const closePopupAdd = popupAdd.querySelector('.popup__close-button');
-const closePopupImg = popupImg.querySelector('.popup__close-button');
 const popupNameInput = popupEdit.querySelector('.form__input_type_name');
 const popupDescrInput = popupEdit.querySelector('.form__input_type_descr');
-const popupPlaceInput = popupAdd.querySelector('.form__input_type_place');
-const popupLinkInput = popupAdd.querySelector('.form__input_type_link');
 const profileInfo = document.querySelector('.profile__info');
 const title = profileInfo.querySelector('.profile__title');
 const subtitle = profileInfo.querySelector('.profile__subtitle');
-const popupImgPhoto = popupImg.querySelector('.popup__img-ph');
-const popupImgTitle = popupImg.querySelector('.popup__img-name')
 const userAvatar = document.querySelector('.profile__photo');
 
-const cardsContainer = document.querySelector('.elements');
 
-const popups = Array.from(document.querySelectorAll('.popup'));
 
 
 
@@ -89,13 +78,13 @@ const cardSection = new Section({
   }
 }, '.elements__list');
 
-function handleCardDelete(cardId) {
+function handleCardDelete(cardId, cardElement) {
   removeCardPopup.open();
   removeCardPopup.setSubmitAction(() => {
     api.deleteCard(cardId)
       .then(() => {
-        this._cardElement.remove();
-        this._cardElement = null;
+        this.cardElement.remove();
+        this.cardElement = null; 
         removeCardPopup.close();
       })
       .catch((err) => {
@@ -105,11 +94,11 @@ function handleCardDelete(cardId) {
 }
 
 function handleLikeClick() {                                                             
-  if (this._buttonLike.classList.contains('elements__like_active')) {
+  if (this.buttonLike.classList.contains('elements__like_active')) {
     this._api.deleteLike(this._id)
       .then((data) => {
-        this._buttonLike.classList.remove('elements__like_active');
-        this._cardElement.querySelector('.element__likes').textContent = data.likes.length;
+        this.buttonLike.classList.remove('elements__like_active');
+        this.cardElement.querySelector('.element__likes').textContent = data.likes.length;
       })
       .catch((err) => {
         console.log(err); 
@@ -117,8 +106,8 @@ function handleLikeClick() {
   } else {
     this._api.putLike(this._id)
       .then((data) => {
-        this._buttonLike.classList.add('elements__like_active');
-        this._cardElement.querySelector('.element__likes').textContent = data.likes.length;
+        this.buttonLike.classList.add('elements__like_active');
+        this.cardElement.querySelector('.element__likes').textContent = data.likes.length;
       })
       .catch((err) => {
         console.log(err); 
@@ -162,7 +151,6 @@ const popupEditForm = new PopupWithForm('.popup_type_edit', (data) => {
 popupEditForm.setEventListeners();
 
 openPopupBtn.addEventListener("click", function () {
-  document.querySelector('.popup-edit-form').reset();
   popupEditForm.open();
   const data = openPopupEdit.getUserInfo();
   popupNameInput.value = data.nameSelector;
@@ -172,7 +160,6 @@ openPopupBtn.addEventListener("click", function () {
 });
 
 openPopupAdd.addEventListener("click", function () {
-  popupAddForm.reset();
   addCardPopup.open();
   profileAddFormValidator.removeValidationErrors();
   profileAddFormValidator.toggleButtonState();
@@ -195,7 +182,6 @@ const formAvatar = new PopupWithForm('.popup_refresh', (data) => {
 formAvatar.setEventListeners();
 
 openPopupAvatar.addEventListener('click', () => {
-  popupAvatarForm.reset();
   formAvatar.open();
   profileAvatarFormValidator.removeValidationErrors();
   profileAvatarFormValidator.toggleButtonState();
