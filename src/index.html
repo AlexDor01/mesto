@@ -68,7 +68,7 @@
     <div class='popup popup_type_add'>
         <div class='popup__container'>
             <h2 class='popup__title'>Новое место</h2>
-            <form class='form popup-add-form' name='profile-name'>
+            <form class='form popup-add-form' name='profile-card'>
                 <fieldset class='form__info'>
                     <input type='text' id='input-place' class='form__input form__input_type_place' name='name'
                         required placeholder='Название' minlength='2' maxlength='30'>
@@ -93,7 +93,7 @@
         <div class='popup__container'>
             <h2 class='popup__title'>Вы уверены?</h2>
             <form class='form popup-delete-form' type='form' novalidate>
-                <button type='submit' class='popup__delete-button form__btn'>Да</button>
+                <button type='submit' class='popup__delete-button form__btn '>Да</button>
             </form>
             <button class='popup__close-button' type='button'></button>
         </div>
@@ -102,7 +102,7 @@
         <div class='popup__container'>
             <button class='popup__close-button' type='button'></button>
             <h2 class='popup__title'>Обновить аватар</h2>
-            <form class="popup-form-avatar form" type="form" name='profile-name' novalidate>
+            <form class="popup-form-avatar form" type="form" name='profile-refresh' novalidate>
                 <input class="form__input form__input_type_foto" id="input-refresh" type="url" name="link"
                     placeholder="Ссылка на фото" required>
                 <span class="form__input-error" id='input-refresh-error'></span>

@@ -83,7 +83,7 @@ function handleCardDelete(cardId, cardElement) {
   removeCardPopup.setSubmitAction(() => {
     api.deleteCard(cardId)
       .then(() => {
-        this.cardElement.remove();
+        this.cardElement.remove();  //Если удалить this, то ничего не работает
         this.cardElement = null; 
         removeCardPopup.close();
       })
