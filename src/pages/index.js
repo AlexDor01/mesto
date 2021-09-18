@@ -51,9 +51,9 @@ api.getUserInfoStart()
   .then(data => {
     myUserId = data._id;
     title.textContent = data.name;
-    subtitle.textContent = data.about;
-    openPopupEdit.setUserAvatar(data);
-  })
+    subtitle.textContent = data.about;  //А если исправить те строчки в UserInfo на эти,
+    openPopupEdit.setUserAvatar(data);  //то тоже не работает, не находит значения
+  })                                    
   .then(() => {
     api.getInitialCards()
       .then(data => {
@@ -83,7 +83,7 @@ function handleCardDelete(cardId, cardElement) {
   removeCardPopup.setSubmitAction(() => {
     api.deleteCard(cardId)
       .then(() => {
-        this.cardElement.remove();  //Если удалить this, то ничего не работает
+        this.cardElement.remove();  
         this.cardElement = null; 
         removeCardPopup.close();
       })
@@ -169,10 +169,10 @@ openPopupAdd.addEventListener("click", function () {
 const formAvatar = new PopupWithForm('.popup_refresh', (data) => {
   formAvatar.renderLoading(true);
   api.changeAvatar(data)
-    .then(data => { userAvatar.setAttribute('src', data.avatar);
-      formAvatar.close();
-    })
-    .catch((err) => {
+    .then(data => { userAvatar.setAttribute('src', data.avatar); //UserInfo.setUserAvatar(data.avatar); Вот 
+      formAvatar.close();                                          //так я исправил, но не работает.
+    })                                                                //Почему нельзя делать так, как я?
+    .catch((err) => {                                                 //Не совсем понимаю
       console.error(err);
     })
     .finally(() => {
