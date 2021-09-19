@@ -135,8 +135,8 @@ addCardPopup.setEventListeners();
 const popupEditForm = new PopupWithForm('.popup_type_edit', (data) => {
   popupEditForm.renderLoading(true);
   api.setUserInfoData(data)
-    .then(() => {
-      openPopupEdit.setUserInfo(data);
+    .then((userData) => {
+      openPopupEdit.setUserInfo(userData);
       popupEditForm.close();
     })
     .catch((err) => {
