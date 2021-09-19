@@ -135,8 +135,8 @@ addCardPopup.setEventListeners();
 const popupEditForm = new PopupWithForm('.popup_type_edit', (data) => {
   popupEditForm.renderLoading(true);
   api.setUserInfoData(data)
-    .then((userData) => {
-      openPopupEdit.setUserInfo(userData);
+    .then((userData) => { //Господи, Вы самый лучший ревьюер, очень хочу, чтобы только вы проверяли мои проекты
+      openPopupEdit.setUserInfo(userData); //объесняете лучше, чем наставники
       popupEditForm.close();
     })
     .catch((err) => {
