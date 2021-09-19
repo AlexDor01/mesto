@@ -47,14 +47,13 @@ removeCardPopup.setEventListeners();
 
 let myUserId = null;
 
-api.getUserInfoStart()
-  .then(data => {
-    myUserId = data._id;
-    openPopupEdit.setUserInfo(data);
-    console.log(data)
-    openPopupEdit.setUserAvatar(data);  
-  })                                    
-  .then(() => {
+api.getUserInfoStart() 
+  .then(data => { 
+    myUserId = data._id; 
+    openPopupEdit.setUserInfo(data)  //Исправил тут, как Вы и сказали, но после замены профессии
+    openPopupEdit.setUserAvatar(data); //текст пропадает, а если в консоль вывести data, то там все есть,
+  })                                   // и профессия, и имя. Но почему-то не выводится, проверил, вроде
+  .then(() => {                        // нигде связь не обрывается
     api.getInitialCards()
       .then(data => {
         cardSection.rendererAll(data);
